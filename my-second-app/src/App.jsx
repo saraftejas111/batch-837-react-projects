@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css'
 import Navbar from './Navbar';
 import EmployeeForm from './EmployeeForm';
-
+import iphone17max from './assets/iphone17.jpg'
 function App() {
 
   let name = "Tejas";
@@ -56,6 +56,8 @@ function App() {
         Event : onChange : use to read & set the value of input tag 
         
         */}
+
+        <img src={iphone17max} alt="" />
 
         <Navbar />
 

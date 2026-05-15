@@ -14,9 +14,15 @@ function App() {
   let [user, setUser] = useState('')
   let [finaluser, setFinalUser] = useState('')
 
-  const handleClick = () => {
+  const handlePlus = () => {
     count += 1
     setCnt(cnt + 1)
+    console.log("react event invoke & handle ")
+    console.log(count)
+  }
+  const handleMinus = () => {
+    count -= 1
+    setCnt(cnt - 1)
     console.log("react event invoke & handle ")
     console.log(count)
   }
@@ -43,7 +49,9 @@ function App() {
         <button onClick={assignUser}>Set User</button>
         <h1>Welcome to my 2nd React app..{name}.. user : {finaluser}</h1>
 
-        <button type='button' onClick={handleClick}>Click Me!</button>
+        <button type='button' onClick={handlePlus}>Plus Me!</button>
+        {" "}
+        <button type='button' onClick={handleMinus}>Minus Me!</button>
 
         <h3>Normal variable : {count}</h3>
 

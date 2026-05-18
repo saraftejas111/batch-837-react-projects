@@ -8,6 +8,7 @@ import Multiply from './Multiply'
 import Sum from './Sum'
 import EmployeeForm from './EmployeeForm';
 import ShowEmployees from './ShowEmployees';
+import Count from './Count';
 
 function App() {
 
@@ -43,6 +44,8 @@ function App() {
     <>
       <center>
         <h1>Welocme to My Props App</h1>
+
+        <Count/> <br />
         <EmployeeForm sendEmp={acceptEmp} />
 
         <ShowEmployees data={emp} /> <br /><br /><br />

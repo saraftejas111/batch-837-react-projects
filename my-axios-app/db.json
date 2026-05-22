@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "empid": "101",
+      "name": "raj patel",
+      "role": "dev",
+      "salary": "123456",
+      "id": "eJ-dPa4nhe0"
+    },
+    {
+      "empid": "102",
+      "name": "neha sharma",
+      "role": "test",
+      "salary": "12345",
+      "id": "dQ3jzhtb2bQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "proid": 101,
+      "proname": "Laptop",
+      "procatagory": "Electronics",
+      "proprice": 55000,
+      "proquantity": 12,
+      "id": "-1P4xLPhuMc"
+    },
+    {
+      "proid": 102,
+      "proname": "Mobile",
+      "procatagory": "Electronics",
+      "proprice": 25000,
+      "proquantity": 20,
+      "id": "xN1bRMjza90"
+    },
+    {
+      "proid": 103,
+      "proname": "Headphones",
+      "procatagory": "Accessories",
+      "proprice": 3000,
+      "proquantity": 35,
+      "id": "kp6heljmYhA"
+    },
+    {
+      "proid": 104,
+      "proname": "Keyboard",
+      "procatagory": "Accessories",
+      "proprice": 1500,
+      "proquantity": 18,
+      "id": "jrDZMm7Gu8Q"
+    },
+    {
+      "proid": 105,
+      "proname": "Mouse",
+      "procatagory": "Accessories",
+      "proprice": 800,
+      "proquantity": 25,
+      "id": "vwv83u5Jdts"
+    },
+    {
+      "proid": 106,
+      "proname": "Monitor",
+      "procatagory": "Electronics",
+      "proprice": 12000,
+      "proquantity": 10,
+      "id": "ZdF9saZIXlQ"
+    },
+    {
+      "proid": 107,
+      "proname": "Printer",
+      "procatagory": "Office",
+      "proprice": 9000,
+      "proquantity": 7,
+      "id": "C-Q4cF8tPbM"
+    },
+    {
+      "proid": 108,
+      "proname": "Tablet",
+      "procatagory": "Electronics",
+      "proprice": 18000,
+      "proquantity": 14,
+      "id": "xmB5VgoLy20"
+    },
+    {
+      "proid": 109,
+      "proname": "fastrack watch",
+      "procatagory": "Wearable",
+      "proprice": 7000,
+      "proquantity": 16,
+      "id": "yG71WNr-y4c"
+    },
+    {
+      "proid": 110,
+      "proname": "BOAT Speaker",
+      "procatagory": "Audio",
+      "proprice": 4500,
+      "proquantity": 22,
+      "id": "KArYtAKrzes"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

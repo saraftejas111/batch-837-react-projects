@@ -1,5 +1,5 @@
 import React from 'react'
-import iphone from '../assets/iphone.jpg'
+import mob from '../assets/mob.jpg'
 
 const Mobiles = () => {
   return (
@@ -7,7 +7,7 @@ const Mobiles = () => {
       <h2>Mobiles</h2>
 
       <div>
-      <img src={iphone} alt="" />
+      <img src={mob} alt="" />
       </div>
     </div>
   )

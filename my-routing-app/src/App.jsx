@@ -5,6 +5,7 @@ import Fashion from './components/Fashion'
 import Electronics from './components/Electronics'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './components/Home'
 
 const App = () => {
   return (
@@ -14,16 +15,17 @@ const App = () => {
           welcome to my routing app
         </h1>
 
-                   <Navbar/>
+        <Navbar />
 
-            <Routes>
-              <Route path='mobiles' element={<Mobiles/>} />
-              <Route path='fashion' element={<Fashion/>} />
-              <Route path='electronics' element={<Electronics/>} />
-            </Routes>
+        <Routes>
 
-            
-      
+          <Route path='/' element={<Home />} />
+          <Route path='mobiles' element={<Mobiles />} />
+          <Route path='fashion' element={<Fashion />} />
+          <Route path='electronics' element={<Electronics />} />
+
+        </Routes>
+
       </center>
     </div>
   )

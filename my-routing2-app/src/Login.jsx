@@ -20,8 +20,13 @@ const Login = () => {
 
        if (form.username === "tejas" && form.password === "tka123") {
         localStorage.setItem("isLogin" , "data recieved")
-         navigate('/dashboard')
-       }else {
+        let userLogin = {id:'101' , name : 'Tejas'}
+
+        localStorage.setItem('userData' , JSON.stringify(userLogin))  // "id = 101 , name : tejas"
+        
+        navigate('/dashboard' , {state : userLogin})
+       
+      }else {
         localStorage.removeItem("isLogin")
         setError("Invalid Credentials")
        }

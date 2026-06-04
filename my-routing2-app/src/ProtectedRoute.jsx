@@ -1,20 +1,17 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-const ProtectedRoute = ({children}) => {
+const ProtectedRoute = () => {
 
     const isLogin = localStorage.getItem("isLogin") 
 
     console.log("isLogin --> " , isLogin)
 
     if(isLogin !== "data recieved"){
-
-        alert("Please Login First") 
-        
         return <Navigate to="/login"/>
     }
 
-  return children ; 
+  return <Outlet/> ; 
 }
 
 export default ProtectedRoute

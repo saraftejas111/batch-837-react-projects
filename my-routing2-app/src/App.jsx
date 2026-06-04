@@ -19,21 +19,21 @@ const App = () => {
           Welcome to Routing Revision
         </h1>
 
-        <Navbar/>
+        <Navbar />
 
         <Routes>
 
           <Route path='/mobiles' element={<Mobiles />} />
           <Route path='/fashion' element={<Fashion />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/profiles' element={<Profile />} />
-          <Route path='/settings' element={<Settings />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/dashboard' element={
-            <ProtectedRoute>
-            <Dashboard />
-            </ProtectedRoute>
-          } />
+
+          <Route element={<ProtectedRoute />}>
+
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/profiles' element={<Profile />} />
+            <Route path='/settings' element={<Settings />} />
+            <Route path='/cart' element={<Cart />} />
+          </Route>
 
         </Routes>
 

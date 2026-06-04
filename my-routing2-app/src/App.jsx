@@ -10,6 +10,7 @@ import ProtectedRoute from './ProtectedRoute'
 import Cart from './Cart'
 import Settings from './Settings'
 import Profile from './Profile'
+import Logout from './Logout'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/mobiles' element={<Mobiles />} />
           <Route path='/fashion' element={<Fashion />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
 
           <Route element={<ProtectedRoute />}>
 

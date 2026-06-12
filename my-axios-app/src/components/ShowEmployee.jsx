@@ -1,72 +1,92 @@
-import React, { useState } from 'react'
-import { deleteEmployeeById, showAllEmployees } from '../employeeServices'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from "react";
+import {
+  deleteEmployeeById,
+  showAllEmployees,
+} from "../employeeServices";
 
-const ShowEmployee = ({ empAddHua, updateEmp }) => {
+const ShowEmployee = ({
+  empAddHua,
+  updateEmp,
+}) => {
+  const [allemployees, setAllemployees] = useState([]);
 
-    let [allemployees, setAllemployees] = useState([])
+  useEffect(() => {
+    loadAllEmployees();
+  }, [empAddHua]);
 
-    useEffect(() => {
-        loadAllEmployees();
-    })
+  const loadAllEmployees = () => {
+    showAllEmployees()
+      .then((res) => setAllemployees(res.data))
+      .catch((err) => console.log(err));
+  };
 
-    const loadAllEmployees = () => {
+  const handleDelete = (id) => {
+    deleteEmployeeById(id).then(() => {
+      loadAllEmployees();
+    });
+  };
 
-        showAllEmployees().then((res) => setAllemployees(res.data))
+  return (
+    <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-2xl">
 
-    }
+      <h2 className="text-3xl text-white text-center font-bold mb-6">
+        All Employees
+      </h2>
 
-    const handleDelete = (empid) => {
+      <div className="overflow-x-auto">
 
-        console.log(empid)
-        deleteEmployeeById(empid).then((res) => {
-            loadAllEmployees();
-        })
-    }
+        <table className="w-full text-white">
 
-    const handleUpdate = (emp) => {
+          <thead>
+            <tr className="bg-white/20">
+              <th className="p-3">ID</th>
+              <th className="p-3">Name</th>
+              <th className="p-3">Role</th>
+              <th className="p-3">Salary</th>
+              <th className="p-3">Actions</th>
+            </tr>
+          </thead>
 
-        updateEmp(emp);
+          <tbody>
 
-    }
+            {allemployees.map((emp) => (
+              <tr
+                key={emp.id}
+                className="border-b border-white/20 hover:bg-white/10 duration-300"
+              >
+                <td className="p-3">{emp.empid}</td>
+                <td className="p-3">{emp.name}</td>
+                <td className="p-3">{emp.role}</td>
+                <td className="p-3">₹ {emp.salary}</td>
 
-    return (
-        <div>
+                <td className="p-3">
 
+                  <button
+                    onClick={() => updateEmp(emp)}
+                    className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg mr-2"
+                  >
+                    Update
+                  </button>
 
-            <h1>All Employees</h1>
-            <table border='1'>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>ROLE</th>
-                        <th>SALARY</th>
-                        <th>ACTIONS</th>
-                    </tr>
-                </thead>
+                  <button
+                    onClick={() => handleDelete(emp.id)}
+                    className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg"
+                  >
+                    Delete
+                  </button>
 
-                <tbody>
-                    {
-                        allemployees.map((emp) => (
-                            <tr key={emp.empid}>
-                                <td>{emp.empid}</td>
-                                <td>{emp.name}</td>
-                                <td>{emp.role}</td>
-                                <td>{emp.salary}</td>
-                                <td>
-                                    <button onClick={() => handleDelete(emp.id)}>Delete</button> {" "}
-                                    <button onClick={() => handleUpdate(emp)}>Update</button>
-                                </td>
-                            </tr>
-                        )
+                </td>
+              </tr>
+            ))}
 
-                        )
-                    }
-                </tbody>
-            </table>
-        </div>
-    )
-}
+          </tbody>
 
-export default ShowEmployee
+        </table>
+
+      </div>
+
+    </div>
+  );
+};
+
+export default ShowEmployee;

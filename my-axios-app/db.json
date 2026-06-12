@@ -2,17 +2,24 @@
   "employees": [
     {
       "empid": "101",
-      "name": "raj patel",
+      "name": "raj patil",
       "role": "dev",
       "salary": "123456",
       "id": "eJ-dPa4nhe0"
     },
     {
       "empid": "102",
-      "name": "neha sharma",
-      "role": "test",
-      "salary": "12345",
-      "id": "dQ3jzhtb2bQ"
+      "name": "neha ",
+      "role": "react",
+      "salary": "45678",
+      "id": "f0vpVXPakuE"
+    },
+    {
+      "empid": "103",
+      "name": "Jay Mobile",
+      "role": "Java",
+      "salary": "123456",
+      "id": "fPA-3Xac3pk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

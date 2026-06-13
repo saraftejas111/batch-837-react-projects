@@ -3,31 +3,27 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
-  
   let [form, setForm] = useState({ username: "", password: "" })
   let [error, setError] = useState("")
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-
     let { name, value } = e.target;
     setForm({ ...form, [name]: value })
   }
 
-
-
-
   const handleSubmit = (e) => {
-
     e.preventDefault();
 
     if (form.username === "tejas" && form.password === "tka123") {
-    
+
       localStorage.setItem("isLogin", "data recieved")
+
+      // Dispatch custom event to notify Navbar immediately
+      window.dispatchEvent(new Event('loginSuccess'));
+
       let userLogin = { id: '101', name: 'Tejas' }
-
-      localStorage.setItem('userData', JSON.stringify(userLogin))  // "id = 101 , name : tejas"
-
+      localStorage.setItem('userData', JSON.stringify(userLogin))
       navigate('/dashboard', { state: userLogin })
 
     } else {
@@ -35,6 +31,7 @@ const Login = () => {
       setError("Invalid Credentials")
     }
   }
+
   return (
     <div>
       <h1>Login Page</h1>
